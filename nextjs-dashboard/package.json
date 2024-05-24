@@ -33,9 +33,12 @@
   "private": true,
   "scripts": {
     "build": "next build",
+    "cypress": "",
+    "cypress:run": "",
     "dev": "next dev",
     "prettier": "prettier --write --ignore-unknown .",
     "prettier:check": "prettier --check --ignore-unknown .",
-    "start": "next start"
+    "start": "next start",
+    "test": ""
   }
 }
