@@ -35,10 +35,18 @@ export default function Page() {
           <Image
             alt="Screenshots of the dashboard project showing desktop version"
             className="hidden md:block"
-            data-cy="hero"
+            data-cy="desktop hero"
             height={760}
             src="/hero-desktop.png"
             width={1000}
+          />
+          <Image
+            alt="Screenshot of the dashboard project showing mobile version"
+            className="block md:hidden"
+            data-cy="mobile hero"
+            height={620}
+            src="/hero-mobile.png"
+            width={560}
           />
         </div>
       </div>
