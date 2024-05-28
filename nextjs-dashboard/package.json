@@ -41,8 +41,8 @@
   "private": true,
   "scripts": {
     "build": "next build",
-    "cypress": "",
-    "cypress:run": "",
+    "cypress": "cypress open",
+    "cypress:run": "cypress run",
     "dev": "next dev",
     "prettier": "prettier --write --ignore-unknown .",
     "prettier:check": "prettier --check --ignore-unknown .",
