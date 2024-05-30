@@ -1,7 +1,7 @@
 describe("dashboard spec", () => {
-  it("passes", () => {
+  it("nav links work", () => {
     cy.visit("/dashboard");
-    cy.get('[data-cy="main header"]').should("have.text", "Dashboard Page");
+    cy.get('[data-cy="main header"]').should("have.text", "Dashboard");
     cy.get('[data-cy="side nav link home active"]').should("have.text", "Home");
     cy.get('[data-cy="side nav link invoices"]').click();
     cy.get('[data-cy="main header"]').should("have.text", "Invoices Page");
@@ -16,7 +16,13 @@ describe("dashboard spec", () => {
       "Customers",
     );
     cy.get('[data-cy="side nav link home"]').click();
-    cy.get('[data-cy="main header"]').should("have.text", "Dashboard Page");
+    cy.get('[data-cy="main header"]').should("have.text", "Dashboard");
     cy.get('[data-cy="side nav link home active"]').should("have.text", "Home");
+  });
+
+  it("elements work", () => {
+    cy.visit("/dashboard");
+    cy.get('[data-cy="invoice cards"]');
+    cy.get('[data-cy="revenue chart and invoice list"]');
   });
 });
