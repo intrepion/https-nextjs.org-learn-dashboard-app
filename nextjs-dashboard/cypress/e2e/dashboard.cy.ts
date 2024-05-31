@@ -25,5 +25,6 @@ describe("dashboard spec", () => {
     cy.get('[data-cy="invoice cards"]');
     cy.get('[data-cy="revenue chart and invoice list"]');
     cy.get('[data-cy="revenue chart"]');
+    cy.get('[data-cy="invoice list"]');
   });
 });
