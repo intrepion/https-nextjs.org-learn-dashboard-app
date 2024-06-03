@@ -4,7 +4,7 @@ describe("dashboard spec", () => {
     cy.get('[data-cy="main header"]').should("have.text", "Dashboard");
     cy.get('[data-cy="side nav link home active"]').should("have.text", "Home");
     cy.get('[data-cy="side nav link invoices"]').click();
-    cy.get('[data-cy="main header"]').should("have.text", "Invoices Page");
+    cy.get('[data-cy="main header"]').should("have.text", "Invoices");
     cy.get('[data-cy="side nav link invoices active"]').should(
       "have.text",
       "Invoices",
