@@ -1,4 +1,4 @@
-describe("dashboard spec", () => {
+describe("customers spec", () => {
   it("passes", () => {
     cy.visit("/dashboard/customers");
   });
