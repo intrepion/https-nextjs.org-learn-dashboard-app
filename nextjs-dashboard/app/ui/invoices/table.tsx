@@ -47,8 +47,28 @@ export default async function InvoicesTable({
                     <p>{formatDateToLocal(invoice.date)}</p>
                   </div>
                   <div className="flex justify-end gap-2">
-                    <UpdateInvoice id={invoice.id} />
-                    <DeleteInvoice id={invoice.id} />
+                    <UpdateInvoice
+                      dataCy={
+                        "button mobile edit " +
+                        invoice.name +
+                        " " +
+                        formatCurrency(invoice.amount) +
+                        " " +
+                        invoice.status
+                      }
+                      id={invoice.id}
+                    />
+                    <DeleteInvoice
+                      dataCy={
+                        "button mobile delete " +
+                        invoice.name +
+                        " " +
+                        formatCurrency(invoice.amount) +
+                        " " +
+                        invoice.status
+                      }
+                      id={invoice.id}
+                    />
                   </div>
                 </div>
               </div>
@@ -81,7 +101,14 @@ export default async function InvoicesTable({
               {invoices?.map((invoice) => (
                 <tr
                   className="w-full border-b py-3 text-sm last-of-type:border-none [&:first-child>td:first-child]:rounded-tl-lg [&:first-child>td:last-child]:rounded-tr-lg [&:last-child>td:first-child]:rounded-bl-lg [&:last-child>td:last-child]:rounded-br-lg"
-                  data-cy={"invoice row " + invoice.id}
+                  data-cy={
+                    "row " +
+                    invoice.name +
+                    " " +
+                    formatCurrency(invoice.amount) +
+                    " " +
+                    invoice.status
+                  }
                   key={invoice.id}
                 >
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
@@ -110,8 +137,28 @@ export default async function InvoicesTable({
                   </td>
                   <td className="whitespace-nowrap py-3 pl-6 pr-3">
                     <div className="flex justify-end gap-3">
-                      <UpdateInvoice id={invoice.id} />
-                      <DeleteInvoice id={invoice.id} />
+                      <UpdateInvoice
+                        dataCy={
+                          "button edit " +
+                          invoice.name +
+                          " " +
+                          formatCurrency(invoice.amount) +
+                          " " +
+                          invoice.status
+                        }
+                        id={invoice.id}
+                      />
+                      <DeleteInvoice
+                        dataCy={
+                          "button delete " +
+                          invoice.name +
+                          " " +
+                          formatCurrency(invoice.amount) +
+                          " " +
+                          invoice.status
+                        }
+                        id={invoice.id}
+                      />
                     </div>
                   </td>
                 </tr>
