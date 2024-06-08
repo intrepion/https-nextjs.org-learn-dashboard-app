@@ -11,7 +11,9 @@ describe("invoices spec", () => {
     cy.get('[data-cy="button create"]')
       .invoke("attr", "href")
       .then((href) => {
-        cy.visit(href);
+        if (href !== undefined) {
+          cy.visit(href);
+        }
       });
     cy.get('[data-cy="breadcrumb Create Invoice"]');
     cy.get('[data-cy="select customer"]').select("Evil Rabbit");
@@ -21,13 +23,17 @@ describe("invoices spec", () => {
     cy.get('[data-cy="button cancel"]')
       .invoke("attr", "href")
       .then((href) => {
-        cy.visit(href);
+        if (href !== undefined) {
+          cy.visit(href);
+        }
       });
     cy.get('[data-cy="textbox search"]').type("Emil");
     cy.get('[data-cy="button edit Emil Kowalski $542.46 pending"]')
       .invoke("attr", "href")
       .then((href) => {
-        cy.visit(href);
+        if (href !== undefined) {
+          cy.visit(href);
+        }
       });
     cy.get('[data-cy="breadcrumb Edit Invoice"]');
     cy.get('[data-cy="select customer"]').select("Emil Kowalski");
@@ -37,7 +43,9 @@ describe("invoices spec", () => {
     cy.get('[data-cy="button cancel"]')
       .invoke("attr", "href")
       .then((href) => {
-        cy.visit(href);
+        if (href !== undefined) {
+          cy.visit(href);
+        }
       });
     cy.get('[data-cy="textbox search"]').type("Emil");
     cy.get('[data-cy="button delete Emil Kowalski $542.46 pending"]');
