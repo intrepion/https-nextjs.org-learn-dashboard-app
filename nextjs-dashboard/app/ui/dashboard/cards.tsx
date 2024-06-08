@@ -26,13 +26,13 @@ export default async function CardWrapper() {
     <>
       {/* NOTE: comment in this code when you get to this point in the course */}
 
-      <Card title="Collected" value={totalPaidInvoices} type="collected" />
-      <Card title="Pending" value={totalPendingInvoices} type="pending" />
-      <Card title="Total Invoices" value={numberOfInvoices} type="invoices" />
+      <Card title="Collected" type="collected" value={totalPaidInvoices} />
+      <Card title="Pending" type="pending" value={totalPendingInvoices} />
+      <Card title="Total Invoices" type="invoices" value={numberOfInvoices} />
       <Card
         title="Total Customers"
-        value={numberOfCustomers}
         type="customers"
+        value={numberOfCustomers}
       />
     </>
   );
@@ -40,12 +40,12 @@ export default async function CardWrapper() {
 
 export function Card({
   title,
-  value,
   type,
+  value,
 }: {
   title: string;
-  value: number | string;
   type: "invoices" | "customers" | "pending" | "collected";
+  value: number | string;
 }) {
   const Icon = iconMap[type];
 
