@@ -52,6 +52,7 @@ export default function Form({ customers }: { customers: CustomerField[] }) {
                 id="amount"
                 name="amount"
                 placeholder="Enter USD amount"
+                required
                 step="0.01"
                 type="number"
               />
