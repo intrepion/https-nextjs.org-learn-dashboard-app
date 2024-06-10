@@ -49,6 +49,7 @@ export async function fetchLatestInvoices() {
       ...invoice,
       amount: formatCurrency(invoice.amount),
     }));
+
     return latestInvoices;
   } catch (error) {
     console.error("Database Error:", error);
@@ -146,6 +147,7 @@ export async function fetchInvoicesPages(query: string) {
   `;
 
     const totalPages = Math.ceil(Number(count.rows[0].count) / ITEMS_PER_PAGE);
+
     return totalPages;
   } catch (error) {
     console.error("Database Error:", error);
@@ -174,6 +176,7 @@ export async function fetchInvoiceById(id: string) {
     }));
 
     console.log(invoice); // Invoice is an empty array []
+
     return invoice[0];
   } catch (error) {
     console.error("Database Error:", error);
@@ -194,6 +197,7 @@ export async function fetchCustomers() {
     `;
 
     const customers = data.rows;
+
     return customers;
   } catch (err) {
     console.error("Database Error:", err);
@@ -241,6 +245,7 @@ export async function getUser(email: string) {
 
   try {
     const user = await sql`SELECT * FROM users WHERE email=${email}`;
+
     return user.rows[0] as User;
   } catch (error) {
     console.error("Failed to fetch user:", error);
