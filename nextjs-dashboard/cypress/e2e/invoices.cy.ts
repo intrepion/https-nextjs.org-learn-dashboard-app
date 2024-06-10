@@ -6,6 +6,7 @@ describe("invoices spec", () => {
     cy.get('[data-cy="textbox password"]').type("123456");
     cy.get('[data-cy="button log in"]').click();
     cy.wait(4000);
+    cy.get('[data-cy="main header"]').should("have.text", "Dashboard");
     cy.get('[data-cy="side nav link invoices"]').click({ force: true });
     cy.get('[data-cy="main header"]').should("have.text", "Invoices");
     cy.get('[data-cy="row Delba de Oliveira $89.45 paid"]');
