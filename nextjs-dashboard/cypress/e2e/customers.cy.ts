@@ -6,7 +6,13 @@ describe("customers spec", () => {
     cy.get('[data-cy="textbox password"]').type("123456");
     cy.get('[data-cy="button log in"]').click({ force: true });
     cy.wait(1000);
-    cy.visit("/dashboard/customers");
+    cy.get('[data-cy="side nav link customers"]')
+      .invoke("attr", "href")
+      .then((href) => {
+        if (href !== undefined) {
+          cy.visit(href);
+        }
+      });
     cy.get('[data-cy="main header"]').should("have.text", "Customers Page");
   });
 });
