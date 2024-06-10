@@ -1,5 +1,11 @@
 describe("invoices spec", () => {
   it("passes", () => {
+    cy.visit("/login");
+    cy.get('[data-cy="logo"]');
+    cy.get('[data-cy="textbox email"]').type("user@nextmail.com");
+    cy.get('[data-cy="textbox password"]').type("123456");
+    cy.get('[data-cy="button log in"]').click();
+    cy.wait(1000);
     cy.visit("/dashboard/invoices");
     cy.get('[data-cy="row Delba de Oliveira $89.45 paid"]');
     cy.get('[data-cy="row Steven Tey $448.00 paid"]');
