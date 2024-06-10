@@ -67,7 +67,7 @@ jobs:
         if: failure()
         with:
           name: cypress-screenshots
-          path: cypress/screenshots
+          path: nextjs-dashboard/cypress/screenshots
 
       - name: Install Vercel CLI
         run: npm install --global vercel@canary
