@@ -6,6 +6,11 @@ Following the tutorial at https://nextjs.org/learn/dashboard-app
 npm install
 ```
 
+## Lint files
+```sh
+npm run lint
+```
+
 ## Format files
 ```sh
 npm run prettier
